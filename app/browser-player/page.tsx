@@ -1,9 +1,53 @@
+"use client";
+
+import { useState } from "react";
+
 export default function BrowserPlayer() {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   return (
     <div className="container" style={{ padding: "2rem 0" }}>
       <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
         Browser Player
       </h1>
+
+      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+        <a
+          href="https://play.rewindtty.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            backgroundColor: "#007bff",
+            color: "white",
+            padding: "1rem 2rem",
+            borderRadius: "8px",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: "600",
+            boxShadow: "0 4px 12px rgba(0, 123, 255, 0.3)",
+            transition: "all 0.3s ease",
+            marginBottom: "1rem",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#0056b3";
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow =
+              "0 6px 16px rgba(0, 123, 255, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#007bff";
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow =
+              "0 4px 12px rgba(0, 123, 255, 0.3)";
+          }}
+        >
+          🎬 Prova il Browser Player
+        </a>
+        <p style={{ fontSize: "0.9rem", color: "#666", margin: 0 }}>
+          Apri direttamente l'applicazione web
+        </p>
+      </div>
 
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         <p
@@ -46,6 +90,31 @@ export default function BrowserPlayer() {
               optimal viewing.
             </p>
           </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <img
+            src="/assets/player.png"
+            alt="Browser Player Interface"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+              cursor: "pointer",
+              transition: "transform 0.2s ease-in-out",
+            }}
+            onClick={() => setIsLightboxOpen(true)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.02)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          />
+          <p style={{ marginTop: "1rem", fontSize: "0.9rem", color: "#666" }}>
+            Browser Player in action! (Clicca per ingrandire)
+          </p>
         </div>
 
         <div
@@ -121,6 +190,70 @@ export default function BrowserPlayer() {
           </a>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {isLightboxOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+            cursor: "pointer",
+          }}
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src="/assets/player.png"
+              alt="Browser Player Interface - Vista ingrandita"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                objectFit: "contain",
+                borderRadius: "8px",
+              }}
+            />
+            <button
+              onClick={() => setIsLightboxOpen(false)}
+              style={{
+                position: "absolute",
+                top: "-40px",
+                right: "0",
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "2rem",
+                cursor: "pointer",
+                padding: "8px",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+              }}
+              aria-label="Chiudi lightbox"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
