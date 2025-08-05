@@ -1,3 +1,9 @@
+<p align="center">
+  <picture>
+    <img style="max-width:200px;height:auto"  src="https://www.rewindtty.dev/assets/logo.png" alt="rewindtty logo">
+  </picture>
+</p>
+
 # rewindtty Website
 
 This is a static Next.js website for the rewindtty project - a terminal session recorder and replayer written in C.
