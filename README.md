@@ -34,7 +34,7 @@ This is a static Next.js website for the rewindtty project - a terminal session 
 To create a static export suitable for hosting on any static file server:
 
 ```bash
-npm run build
+npm run build 
 ```
 
 This will generate a static version of the site in the `out/` directory.
