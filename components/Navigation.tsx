@@ -103,7 +103,7 @@ export default function Navigation() {
           </Link>
 
           <a
-            href="https://github.com/debba/rewindtty"
+            href="https://github.com/rewindtty/rewindtty"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -172,7 +172,7 @@ export default function Navigation() {
             </Link>
 
             <a
-              href="https://github.com/debba/rewindtty"
+              href="https://github.com/rewindtty/rewindtty"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}

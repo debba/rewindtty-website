@@ -16,7 +16,7 @@ export default function GitHubStats() {
     const fetchStats = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/debba/rewindtty"
+          "https://api.github.com/repos/rewindtty/rewindtty"
         );
         const data = await response.json();
         setStats({
@@ -67,7 +67,7 @@ export default function GitHubStats() {
   return (
     <div className="github-badges">
       <a
-        href="https://github.com/debba/rewindtty"
+        href="https://github.com/rewindtty/rewindtty"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -90,7 +90,7 @@ export default function GitHubStats() {
         Star on GitHub ({stats?.stargazers_count || 0})
       </a>
       <a
-        href="https://github.com/debba/rewindtty/fork"
+        href="https://github.com/rewindtty/rewindtty/fork"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -113,7 +113,7 @@ export default function GitHubStats() {
         Fork ({stats?.forks_count || 0})
       </a>
       <a
-        href="https://github.com/debba/rewindtty/commits/main"
+        href="https://github.com/rewindtty/rewindtty/commits/main"
         target="_blank"
         rel="noopener noreferrer"
         style={{

@@ -18,7 +18,7 @@ export default function Home() {
               Get Started
             </Link>
             <a
-              href="https://github.com/debba/rewindtty"
+              href="https://github.com/rewindtty/rewindtty"
               className="btn btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
@@ -118,7 +118,7 @@ export default function Home() {
           </p>
           <div className="code-block">
             git clone --recurse-submodules
-            https://github.com/debba/rewindtty.git
+            https://github.com/rewindtty/rewindtty.git
           </div>
 
           <p style={{ marginBottom: "1rem" }}>
@@ -159,7 +159,7 @@ export default function Home() {
           <p style={{ marginTop: "2rem" }}>
             For detailed usage instructions and advanced features, visit the{" "}
             <a
-              href="https://github.com/debba/rewindtty"
+              href="https://github.com/rewindtty/rewindtty"
               style={{ color: "#667eea" }}
             >
               GitHub repository
