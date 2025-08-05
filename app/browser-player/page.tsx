@@ -42,7 +42,7 @@ export default function BrowserPlayer() {
               "0 4px 12px rgba(0, 123, 255, 0.3)";
           }}
         >
-          🎬 Prova il Browser Player
+          🎬 Try Browser Player now
         </a>
         <p style={{ fontSize: "0.9rem", color: "#666", margin: 0 }}>
           Apri direttamente l'applicazione web
