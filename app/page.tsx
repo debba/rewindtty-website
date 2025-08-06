@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import GitHubStats from "../components/GitHubStats";
+import {GitHubStats} from "@/components/GitHubStats";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
             A terminal session recorder and replayer written in C that allows
             you to capture and replay terminal sessions with precise timing.
           </p>
-          <GitHubStats />
+          <GitHubStats repoName={"rewindtty"}/>
           <div className="cta-buttons">
             <Link href="#installation" className="btn btn-primary">
               Get Started

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import {GitHubStats} from "@/components/GitHubStats";
 
 export default function BrowserPlayer() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -44,10 +45,14 @@ export default function BrowserPlayer() {
         >
           🎬 Try Browser Player now
         </a>
-        <p style={{ fontSize: "0.9rem", color: "#666", margin: 0 }}>
-          Apri direttamente l'applicazione web
-        </p>
       </div>
+
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <GitHubStats repoName={"browser_player"} style={{
+                "backgroundColor": "rgb(0, 123, 255)",
+                "color": "#fff"
+            }} />
+        </div>
 
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         <p

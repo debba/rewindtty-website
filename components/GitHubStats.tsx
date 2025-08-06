@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 interface GitHubStats {
   stargazers_count: number;
@@ -8,7 +8,12 @@ interface GitHubStats {
   updated_at: string;
 }
 
-export default function GitHubStats() {
+interface GithubBadgeStyleProps {
+    backgroundColor?: string;
+    color?: string;
+}
+
+export const GitHubStats: React.FC<{ repoName: string, style? : GithubBadgeStyleProps }> = ({repoName, style}) => {
   const [stats, setStats] = useState<GitHubStats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +21,7 @@ export default function GitHubStats() {
     const fetchStats = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/rewindtty/rewindtty"
+          `https://api.github.com/repos/rewindtty/${repoName}`
         );
         const data = await response.json();
         setStats({
@@ -35,6 +40,7 @@ export default function GitHubStats() {
   }, []);
 
   const formatDate = (dateString: string) => {
+      console.log({dateString})
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
@@ -50,10 +56,10 @@ export default function GitHubStats() {
             display: "inline-flex",
             alignItems: "center",
             gap: "0.5rem",
-            background: "rgba(255, 255, 255, 0.1)",
+            background: style?.backgroundColor || "rgba(255, 255, 255, 0.1)",
             padding: "0.5rem 1rem",
             borderRadius: "6px",
-            color: "white",
+            color: style?.color || "white",
             marginRight: "1rem",
             border: "1px solid rgba(255, 255, 255, 0.3)",
           }}
@@ -67,17 +73,17 @@ export default function GitHubStats() {
   return (
     <div className="github-badges">
       <a
-        href="https://github.com/rewindtty/rewindtty"
+        href={`https://github.com/rewindtty/${repoName}`}
         target="_blank"
         rel="noopener noreferrer"
         style={{
           display: "inline-flex",
           alignItems: "center",
           gap: "0.5rem",
-          background: "rgba(255, 255, 255, 0.1)",
+          background: style?.backgroundColor || "rgba(255, 255, 255, 0.1)",
           padding: "0.5rem 1rem",
           borderRadius: "6px",
-          color: "white",
+          color: style?.color || "white",
           textDecoration: "none",
           marginRight: "1rem",
           border: "1px solid rgba(255, 255, 255, 0.3)",
@@ -90,17 +96,17 @@ export default function GitHubStats() {
         Star on GitHub ({stats?.stargazers_count || 0})
       </a>
       <a
-        href="https://github.com/rewindtty/rewindtty/fork"
+          href={`https://github.com/rewindtty/${repoName}/fork`}
         target="_blank"
         rel="noopener noreferrer"
         style={{
           display: "inline-flex",
           alignItems: "center",
           gap: "0.5rem",
-          background: "rgba(255, 255, 255, 0.1)",
+          background: style?.backgroundColor || "rgba(255, 255, 255, 0.1)",
           padding: "0.5rem 1rem",
           borderRadius: "6px",
-          color: "white",
+          color: style?.color || "white",
           textDecoration: "none",
           marginRight: "1rem",
           border: "1px solid rgba(255, 255, 255, 0.3)",
@@ -113,17 +119,17 @@ export default function GitHubStats() {
         Fork ({stats?.forks_count || 0})
       </a>
       <a
-        href="https://github.com/rewindtty/rewindtty/commits/main"
+          href={`https://github.com/rewindtty/${repoName}/commits/main`}
         target="_blank"
         rel="noopener noreferrer"
         style={{
           display: "inline-flex",
           alignItems: "center",
           gap: "0.5rem",
-          background: "rgba(255, 255, 255, 0.1)",
+            background: style?.backgroundColor || "rgba(255, 255, 255, 0.1)",
           padding: "0.5rem 1rem",
           borderRadius: "6px",
-          color: "white",
+            color: style?.color || "white",
           textDecoration: "none",
           border: "1px solid rgba(255, 255, 255, 0.3)",
           transition: "all 0.3s ease",
