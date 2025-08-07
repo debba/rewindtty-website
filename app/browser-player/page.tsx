@@ -99,7 +99,7 @@ export default function BrowserPlayer() {
 
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <img
-            src="/assets/player.png"
+            src="/assets/images/player.png"
             alt="Browser Player Interface"
             style={{
               maxWidth: "100%",
@@ -223,7 +223,7 @@ export default function BrowserPlayer() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src="/assets/player.png"
+              src="/assets/images/player.png"
               alt="Browser Player Interface - Vista ingrandita"
               style={{
                 maxWidth: "100%",

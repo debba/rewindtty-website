@@ -63,23 +63,3 @@ The site is configured for static export and can be deployed to:
 - Any static file hosting service
 
 Simply upload the contents of the `out/` directory after running `npm run build`.
-
-## Project Structure
-
-```
-website/
-├── app/                    # Next.js App Router pages
-│   ├── browser-player/     # Browser player page  
-│   ├── docs/              # Documentation page
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout with navigation
-│   └── page.tsx           # Homepage
-├── components/            # React components
-│   └── Navigation.tsx     # Site navigation
-├── public/               # Static assets
-│   ├── demo.gif         # Demo animation
-│   └── logo.png         # Project logo
-├── next.config.js       # Next.js configuration for static export
-├── package.json         # Dependencies and scripts
-└── tsconfig.json       # TypeScript configuration
-```

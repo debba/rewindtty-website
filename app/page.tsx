@@ -34,10 +34,10 @@ export default function Home() {
           <h2>See it in Action</h2>
           <div className="demo-video">
             <Image
-              src="/assets/demo.gif"
+              src="/assets/images/record.gif"
               alt="rewindtty demo"
-              width={800}
-              height={400}
+              width={600}
+              height={475}
               style={{
                 maxWidth: "100%",
                 height: "auto",
