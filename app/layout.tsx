@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "@/components/Footer";
+import MatomoAnalytics from "@/components/MatomoAnalytics";
 
 export const metadata: Metadata = {
   title: "rewindtty - Terminal Session Recorder",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <MatomoAnalytics />
       </body>
     </html>
   );

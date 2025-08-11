@@ -35,7 +35,7 @@ export default function Navigation() {
           }}
         >
           <Image
-            src="/assets/logo.png"
+            src="/assets/images/logo.png"
             alt="rewindtty logo"
             width={200}
             height={50}
