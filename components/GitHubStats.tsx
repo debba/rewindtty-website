@@ -40,7 +40,6 @@ export const GitHubStats: React.FC<{ repoName: string, style? : GithubBadgeStyle
   }, []);
 
   const formatDate = (dateString: string) => {
-      console.log({dateString})
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
